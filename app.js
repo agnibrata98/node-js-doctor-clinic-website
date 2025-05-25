@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express')
 
 const app = express()
@@ -11,8 +13,8 @@ app.use(webroute) // use webRouter
 
 app.use(express.static(__dirname + "/public"));
 
-const port = 8000
 
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`)
+
+app.listen(process.env.PORT, () => {
+    console.log(`Server is running on port ${process.env.PORT}`)
 })
